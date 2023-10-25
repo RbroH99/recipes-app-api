@@ -9,7 +9,6 @@ from app import calc
 class CalcTest(SimpleTestCase):
     """Test the calc Module"""
 
-
     def test_add_numbers(self):
         """Test adding numbers together"""
 
