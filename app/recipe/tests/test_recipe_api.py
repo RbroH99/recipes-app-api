@@ -153,9 +153,9 @@ class PrivateRecipeAPITests(TestCase):
         )
 
         payload = {
-            'title': 'Sample Title',
-            'link': 'https:/example.com/recipe.pdf',
-            'description': 'Sample recipe description',
+            'title': 'New Sample Title',
+            'link': 'https:/example.com/new-recipe.pdf',
+            'description': 'New Sample recipe description',
             'time_minutes': 10,
             'price': Decimal('2.50'),
         }
