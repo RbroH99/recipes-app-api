@@ -37,7 +37,7 @@ class PublicTagsApiTests(TestCase):
 class PrivateTagsApiTest(TestCase):
     """Test authenticated API requests."""
 
-    def stUp(self):
+    def setUp(self):
         self.user = create_user()
         self.client = APIClient()
         self.client.force_authenticate(self.user)
@@ -65,5 +65,5 @@ class PrivateTagsApiTest(TestCase):
 
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(len(res.data), 1)
-        self.assertEqual(res.data[0]['name', tag.name])
-        self.assertEqual(res.data[0]['id', tag.id])
+        self.assertEqual(res.data[0]['name'], tag.name)
+        self.assertEqual(res.data[0]['id'], tag.id)
