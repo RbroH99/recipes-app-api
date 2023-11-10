@@ -231,7 +231,7 @@ class PrivateRecipeAPITests(TestCase):
         tag_indian = Tag.objects.create(user=self.user, name='Indian')
         payload = {
             'title': 'Pongal',
-            'time_minutea': 60,
+            'time_minutes': 60,
             'price': Decimal('4.50'),
             'tags': [{'name': 'Indian'}, {'name': 'Breakfast'}],
         }
