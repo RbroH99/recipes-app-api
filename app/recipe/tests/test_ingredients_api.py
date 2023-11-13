@@ -13,7 +13,7 @@ from core.models import Ingredient
 from recipe.serializers import IngredientSerializer
 
 
-INGREDIENTS_URL = reverse('recipe:ingredients-list')
+INGREDIENTS_URL = reverse('recipe:ingredient-list')
 
 
 def create_user(email='email@example.com', password='testpass123'):
@@ -53,7 +53,7 @@ class PrivateIngredientsApiTest(TestCase):
         serializer = IngredientSerializer(ingredients, many=True)
 
         self.assertEqual(res.status_code, status.HTTP_200_OK)
-        self.assertEqual(res.date, serializer.data)
+        self.assertEqual(res.data, serializer.data)
 
     def test_ingredients_limited_to_user(self):
         """Test list of ingredients is limited to the user."""
