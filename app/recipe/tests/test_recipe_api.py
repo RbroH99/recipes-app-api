@@ -306,14 +306,14 @@ class PrivateRecipeAPITests(TestCase):
         recipe = recipes[0]
         self.assertEqual(recipe.ingredients.count(), 2)
         for ingredient in payload['ingredients']:
-            exists = recipe.ibgredients.filter(
+            exists = recipe.ingredients.filter(
                 name=ingredient['name'],
                 user=self.user,
             ).exists()
             self.assertTrue(exists)
 
     def test_create_recipe_with_existing_ingredient(self):
-        """Test creating a recipe with an exixiting infredient."""
+        """Test creating a recipe with an exisiting ingredient."""
         ingredient = Ingredient.objects.create(user=self.user, name='Lemon')
         payload = {
             'title': 'Vietnamese Soup',
@@ -330,9 +330,8 @@ class PrivateRecipeAPITests(TestCase):
         self.assertEqual(recipe.ingredients.count(), 2)
         self.assertIn(ingredient, recipe.ingredients.all())
         for ingredient in payload['ingredients']:
-            exists = recipe.ibgredients.filter(
+            exists = recipe.ingredients.filter(
                 name=ingredient['name'],
                 user=self.user,
             ).exists()
             self.assertTrue(exists)
-
